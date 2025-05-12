@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Sales History</h2>
+<ul>
+    {% for name, qty, total in sales %}
+    <li>{{ qty }} x {{ name }} - ${{ "%.2f"|format(total) }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

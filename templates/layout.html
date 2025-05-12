@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store App</title>
+</head>
+<body>
+    <h1>🛍️ Retail Store</h1>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a> |
+        <a href="{{ url_for('add_item') }}">Add Item</a> |
+        <a href="{{ url_for('inventory') }}">Inventory</a> |
+        <a href="{{ url_for('purchase') }}">Purchase</a> |
+        <a href="{{ url_for('sales') }}">Sales</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
