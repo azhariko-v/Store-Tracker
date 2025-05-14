@@ -1,6 +1,16 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<h2>Welcome to the Store Management App</h2>
-<p>Use the menu above to manage your store.</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retail Store Dashboard</title>
+</head>
+<body>
+    <h1>🏬 Retail Store Dashboard</h1>
+    <ul>
+        <li><a href="{{ url_for('add_item') }}">Add Item</a></li>
+        <li><a href="{{ url_for('inventory') }}">View Inventory</a></li>
+        <li><a href="{{ url_for('purchase') }}">Make a Purchase</a></li>
+        <li><a href="{{ url_for('sales') }}">View Sales</a></li>
+    </ul>
+</body>
+</html>

@@ -1,10 +1,21 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<h2>Sales History</h2>
-<ul>
-    {% for name, qty, total in sales %}
-    <li>{{ qty }} x {{ name }} - ${{ "%.2f"|format(total) }}</li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales</title>
+</head>
+<body>
+    <h1>🧾 Sales History</h1>
+    {% if sales %}
+        <ul>
+            {% for sale in sales %}
+                <li>{{ sale['quantity'] }} x {{ sale['name'] }} - ${{ sale['total'] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No sales recorded.</p>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

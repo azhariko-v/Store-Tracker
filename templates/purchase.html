@@ -1,16 +1,25 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<h2>Purchase Item</h2>
-<form method="post">
-    <label>Item:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Item</title>
+</head>
+<body>
+    <h1>🛒 Purchase Item</h1>
+    <form method="POST">
+        <label for="item_id">Select Item:</label><br>
         <select name="item_id" required>
             {% for item in items %}
-            <option value="{{ item.item_id }}">{{ item.name }} - ${{ "%.2f"|format(item.price) }}</option>
+                <option value="{{ item['id'] }}">{{ item['name'] }} - ${{ item['price'] }}</option>
             {% endfor %}
-        </select>
-    </label><br>
-    <label>Quantity: <input type="number" name="quantity" min="1" required></label><br>
-    <button type="submit">Purchase</button>
-</form>
-{% endblock %}
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" name="quantity" min="1" required><br><br>
+
+        <button type="submit">Buy</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
